@@ -25,6 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
  #  Runs a single command using the runners shell
+ 
+      - name: chestie
+        run: curl -u remus@ilies.co.uk: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 -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/neurogamer-team/repos -d '{"name":"sugipula"}'
+ 
+ 
+
 #       - name: Clean up
 #         run: git remote prune origin
    
@@ -58,10 +64,7 @@ jobs:
 #           echo $ID_TEAM
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }} 
-      - name: Run a multi-line script
-        run: |
-         curl -q -X POST -H "Authorization: token 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" -d '{"name": "test3", "auto_init":"true", "gitignore_template":"nanoc"}' https://api.github.com/orgs/neurogamer-team/repos
-           
+
 #       - name: Run a multi-line script
 #         run: |
 #          curl -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/organizations/99800456/team/5687593/repos/neurogamer-team/test2 -d '{"permission":"pull"}'
