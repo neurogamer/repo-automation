@@ -28,8 +28,7 @@ jobs:
  
       - name: chestie
         run: |
-         curl -q -X POST -H "Authorization: token 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" -d '{"name": "NOUASEARA", "auto_init":"true", "gitignore_template":"template"}' https://api.github.com/orgs/neurogamer-team/repos
-
+          curl -X POST https://api.github.com/repos/neurogamer/template/generate -d '{"owner": "neurogamer-team", "name": "killme"}' -H 'Accept: application/vnd.github.baptiste-preview+json' -H 'Content-Type: application/json' -H 'Authorization: token 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'
 
 #       - name: Clean up
 #         run: git remote prune origin
