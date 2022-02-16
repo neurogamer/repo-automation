@@ -35,10 +35,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
       
       
-#       - name: Add a team to repo
-#         run: gh repo adv-appmod/test-project -t cool-gen-devs
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
+      - name: Add a team to repo
+        run: gh repo neurogamer/test-project -t cool-gen-devs
+        env:
+          GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
 #       # Runs a set of commands using the runners shell
 #       - name: Run a multi-line script
 #         run: |
