@@ -25,6 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
    # Runs a single command using the runners shell
+   
+      - name: Set main branch
+        run: git config --global init.defaultBranch main
+        
       - name: Clone a template repo
         run: gh repo create git@github.com:neurogamer/test-project -p git@github.com:neurogamer/template.git --public --clone
         env:
