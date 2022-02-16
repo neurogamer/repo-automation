@@ -29,9 +29,7 @@ jobs:
       - name: chestie
         run: |
          curl -q -X POST -H "Authorization: token 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 " -d '{"name": "test3", "auto_init":"true", "gitignore_template":"template"}' https://api.github.com/orgs/neurogamer-team/repos
-        env:
-          GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
- 
+
 
 #       - name: Clean up
 #         run: git remote prune origin
