@@ -32,7 +32,7 @@ jobs:
         run: git config --global init.defaultBranch main
         
       - name: Clone a template repo
-        run: gh repo create git@github.com:neurogamer/test-project -p git@github.com:neurogamer/template.git --public --clone
+        run: gh repo create test-project -p git@github.com:neurogamer/template.git --public --clone
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
       
