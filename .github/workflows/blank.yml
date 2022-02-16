@@ -39,22 +39,23 @@ jobs:
           
       - name: Get organization ID
         run: |
-          ID_ORG=`curl -s -u remus@ilies.co.uk${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team" | jq ."id"` \
+          ID_ORG=`curl -s -u remus@ilies.co.uk${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team" | jq ."id"` 
+     
+      - name:  echo Org ID
+        run: |
           echo $ID_ORG
-        env:
-          GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
+   
           
       - name: Get team ID
         run: |
           ID_TEAM=`curl -s -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team/teams" | jq --arg team "cool-gen-devs" | jq .[] | jq ."id"` \
-          echo $ID_TEAM
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}  
-          
+      - name: echo team ID   
+        run: |
+          echo $ID_TEAM       
            
       - name: Run a multi-line script
         run: |
-         echo ID_ORG \
-         echo ID_TEAM \
          curl -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/organizations/$ID_ORG/team/$ID_TEAM/repos/neurogamer-team/test2 -d '{"permission":"pull"}'
 
