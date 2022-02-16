@@ -39,11 +39,13 @@ jobs:
           
       - name: Get organization ID
         run: |
-          ID_ORG=`curl -s -u remus@ilies.co.uk${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team" | jq ."id"` 
+          ID_ORG=`curl -s -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team" | jq ."id"` 
      
       - name:  echo Org ID
         run: |
           echo $ID_ORG
+        env:
+          GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }} 
    
           
       - name: Get team ID
@@ -53,7 +55,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}  
       - name: echo team ID   
         run: |
-          echo $ID_TEAM       
+          echo $ID_TEAM
+        env:
+          GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }} 
            
       - name: Run a multi-line script
         run: |
