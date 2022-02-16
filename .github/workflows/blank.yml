@@ -28,7 +28,7 @@ jobs:
  
       - name: chestie
         run: |
-          curl -X POST https://api.github.com/repos/neurogamer/template/generate -d '{"owner": "neurogamer-team", "name": "killmenow"}' -H 'Accept: application/vnd.github.baptiste-preview+json' -H 'Content-Type: application/json' -H 'Authorization: token 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'
+          curl -X POST https://api.github.com/repos/neurogamer/template/generate -d '{"owner": "neurogamer-team", "name": "killkill"}' -H 'Accept: application/vnd.github.baptiste-preview+json' -H 'Content-Type: application/json' -H 'Authorization: token ${{ secrets.REMUS_TOKEN }}'
 
 #       - name: Clean up
 #         run: git remote prune origin
