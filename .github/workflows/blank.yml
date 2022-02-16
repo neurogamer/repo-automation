@@ -28,7 +28,7 @@ jobs:
  
       - name: chestie
         run: |
-         curl -q -X POST -H "Authorization: token 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 " -d '{"name": "test3", "auto_init":"true", "gitignore_template":"template"}' https://api.github.com/orgs/neurogamer-team/repos
+         curl -q -X POST -H "Authorization: token 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" -d '{"name": "NOUASEARA", "auto_init":"true", "gitignore_template":"nanoc"}' https://api.github.com/orgs/neurogamer-team/repos
 
 
 #       - name: Clean up
