@@ -32,16 +32,10 @@ jobs:
         run: git config --global init.defaultBranch main
         
       - name: Clone a template repo
-        run: gh repo create slash-wrist -p git@github.com:neurogamer/template.git --public --clone
+        run: gh repo create test2 -p git@github.com:neurogamer/template.git --public --clone
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
-      
-      
-#       - name: Add a team to repo
-#         run: gh repo create neurogamer/test-project -t cool-gen-devs --public
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
-# #       # Runs a set of commands using the runners shell
+    
           
       - name: Get organization ID
         run: |
@@ -58,5 +52,5 @@ jobs:
            
       - name: Run a multi-line script
         run: |
-          curl -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/organizations/$ID_ORG/team/$ID_TEAM/repos/neurogamer-team/slash-wrist -d '{"permission":"pull"}'
+          curl -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/organizations/$ID_ORG/team/$ID_TEAM/repos/neurogamer-team/test2 -d '{"permission":"pull"}'
 
