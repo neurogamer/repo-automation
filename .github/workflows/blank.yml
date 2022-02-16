@@ -27,7 +27,8 @@ jobs:
  #  Runs a single command using the runners shell
  
       - name: chestie
-        run: curl -u remus@ilies.co.uk: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 -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/neurogamer-team/repos -d '{"name":"sugipula"}'
+        run: |
+         curl -u remus@ilies.co.uk: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 -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/neurogamer-team/repos -d '{"name":"sugipula"}'
  
  
 
