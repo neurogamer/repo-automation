@@ -47,5 +47,5 @@ jobs:
           curl \
            -X PATCH \
            -H "Accept: application/vnd.github.v3+json" \
-           https://api.github.com/orgs/ORG/teams/cool-gen-devs \
+           https://api.github.com/orgs/neurogamer-team/teams/cool-gen-devs \
            -d '{"permission":"admin"}'
