@@ -40,14 +40,14 @@ jobs:
       - name: Get organization ID
         run: |
           ID_ORG=`curl -s -u remus@ilies.co.uk${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team" | jq ."id"` \
-          echo ID_ORG
+          echo $ID_ORG
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
           
       - name: Get team ID
         run: |
           ID_TEAM=`curl -s -u remus@ilies.co.uk:${{ secrets.REMUS_TOKEN }} "https://api.github.com/orgs/neurogamer-team/teams" | jq --arg team "cool-gen-devs" | jq .[] | jq ."id"` \
-          echo ID_TEAM
+          echo $ID_TEAM
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}  
           
