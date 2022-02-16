@@ -38,7 +38,7 @@ jobs:
       
       
       - name: Add a team to repo
-        run: gh repo create neurogamer/test-project -t neurogamer-team/cool-gen-devs
+        run: gh repo create neurogamer/test-project -t neurogamer-team/cool-gen-devs --public
         env:
           GITHUB_TOKEN: ${{ secrets.REMUS_TOKEN }}
 #       # Runs a set of commands using the runners shell
